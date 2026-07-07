@@ -1,108 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
 
-    The Shoot Companion Privacy Policy
+<head>
+    <meta charset="UTF-8">
 
-Effective Date: July 7, 2026
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-The Shoot Companion is designed as a local-first application for macOS. This Privacy Policy explains how The Shoot Companion handles information when you use the application.
+    <title>The Shoot Companion Privacy Policy</title>
 
-Information We Collect
+    <meta
+        name="description"
+        content="Privacy Policy for The Shoot Companion, a local-first shot planning and visual storyboarding application for macOS."
+    >
 
-The Shoot Companion does not require you to create an account or sign in.
+    <style>
+        :root {
+            color-scheme: dark;
 
-The Shoot Companion does not collect personal information for advertising, tracking, profiling, or marketing purposes.
+            --background: #101114;
+            --panel: rgba(255, 255, 255, 0.05);
+            --panel-border: rgba(255, 255, 255, 0.09);
 
-We do not sell personal information or user data.
+            --primary-text: #f5f5f7;
+            --secondary-text: #a8a8ad;
+            --muted-text: #77777d;
 
-Local Data Storage
+            --accent: #5ca8ff;
+            --accent-soft: rgba(92, 168, 255, 0.12);
+        }
 
-Projects, scenes, shots, storyboard information, image editing settings, and other production information created within The Shoot Companion are stored locally on your Mac.
+        * {
+            box-sizing: border-box;
+        }
 
-This information is not automatically uploaded to servers operated by The Shoot Companion.
+        html {
+            scroll-behavior: smooth;
+        }
 
-You are responsible for maintaining appropriate backups of information stored on your Mac.
+        body {
+            margin: 0;
+            min-height: 100vh;
 
-Files and Storyboard Images
+            background:
+                radial-gradient(
+                    circle at 15% 0%,
+                    rgba(0, 122, 255, 0.12),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 90% 25%,
+                    rgba(70, 110, 180, 0.08),
+                    transparent 28%
+                ),
+                var(--background);
 
-The Shoot Companion may access images, documents, or other files that you explicitly select through macOS file selection dialogs.
+            color: var(--primary-text);
 
-Selected files may be imported, copied, processed, or stored locally as part of your project or storyboard workflow.
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "SF Pro Text",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
 
-The Shoot Companion may also create exported files at locations that you explicitly select.
+            -webkit-font-smoothing: antialiased;
+        }
 
-The application does not automatically scan or access unrelated files stored on your Mac.
+        a {
+            color: var(--accent);
+        }
 
-Image Imports from URLs
+        .page {
+            width: 100%;
+            padding: 64px 24px;
+        }
 
-The Shoot Companion may connect to the internet when you explicitly request an image to be imported from a URL.
+        .container {
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+        }
 
-The requested URL and standard network information required to establish the connection may be communicated to the website or server hosting that image.
+        .header {
+            margin-bottom: 38px;
+        }
 
-The Shoot Companion does not use URL imports for advertising or tracking.
+        .eyebrow {
+            margin-bottom: 14px;
 
-Third-party websites and servers are governed by their own privacy policies and practices.
+            color: var(--accent);
 
-Local Network Communication
+            font-size: 0.8rem;
+            font-weight: 700;
 
-The Shoot Companion may use your local network to communicate with compatible companion applications or devices, including applications designed to support production and on-set workflows.
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
 
-Local network communication may be used to exchange project, scene, shot, storyboard, capture, or related production information at your request.
+        h1 {
+            margin: 0;
 
-The Shoot Companion does not use local network communication for advertising or cross-app tracking.
+            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            line-height: 1.02;
 
-Data Sharing
+            letter-spacing: -0.055em;
+        }
 
-The Shoot Companion does not sell user data.
+        .effective-date {
+            margin-top: 20px;
 
-The Shoot Companion does not share your project or production information with advertising companies or data brokers.
+            color: var(--secondary-text);
 
-Information may be transmitted to a third-party service only when you explicitly initiate a feature that requires communication with that service, such as importing an image from a URL.
+            font-size: 0.95rem;
+        }
 
-Analytics and Advertising
+        .introduction {
+            margin-top: 30px;
 
-The Shoot Companion does not use advertising SDKs.
+            max-width: 760px;
 
-The Shoot Companion does not use your data for targeted advertising.
+            color: var(--secondary-text);
 
-The Shoot Companion does not track you across apps or websites for advertising purposes.
+            font-size: 1.12rem;
+            line-height: 1.8;
+        }
 
-User Accounts
+        .policy-panel {
+            padding: 20px 40px 42px;
 
-The Shoot Companion does not currently require a user account.
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
 
-No account profile is created when you use the application.
+            background: var(--panel);
 
-Children's Privacy
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-The Shoot Companion is a productivity and production-planning application and is not specifically directed toward children.
+            box-shadow:
+                0 28px 80px rgba(0, 0, 0, 0.28);
+        }
 
-The Shoot Companion does not knowingly collect personal information from children through an account-registration or advertising system.
+        .policy-section {
+            padding: 36px 0;
 
-Data Retention and Deletion
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.07);
+        }
 
-Because project and production information is stored locally on your Mac, you control the information created within The Shoot Companion.
+        .policy-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
 
-You may delete projects, scenes, shots, storyboard information, or other supported content through the application.
+        h2 {
+            margin: 0 0 18px;
 
-Removing the application or deleting locally stored application data may also remove information stored by The Shoot Companion.
+            color: var(--primary-text);
 
-You should maintain backups of important production information before deleting application data.
+            font-size: 1.45rem;
+            line-height: 1.3;
 
-Security
+            letter-spacing: -0.025em;
+        }
 
-The Shoot Companion uses the security and application sandboxing capabilities provided by macOS.
+        p {
+            margin: 0 0 16px;
 
-However, no software or storage system can guarantee absolute security.
+            color: var(--secondary-text);
 
-You are responsible for maintaining the security of your Mac, user account, and locally stored project information.
+            font-size: 1rem;
+            line-height: 1.75;
+        }
 
-Changes to This Privacy Policy
+        p:last-child {
+            margin-bottom: 0;
+        }
 
-This Privacy Policy may be updated as The Shoot Companion develops or introduces new features.
+        .contact-card {
+            margin-top: 20px;
+            padding: 20px 22px;
 
-Any updated Privacy Policy will be published on this page with a revised effective date.
+            border: 1px solid rgba(92, 168, 255, 0.18);
+            border-radius: 16px;
 
-Contact
+            background: var(--accent-soft);
+        }
 
-For privacy questions or enquiries relating to The Shoot Companion, please contact:
+        .contact-label {
+            display: block;
 
-Email: vissu.kalava@icloud.com
+            margin-bottom: 8px;
+
+            color: var(--secondary-text);
+
+            font-size: 0.85rem;
+            font-weight: 600;
+
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .contact-email {
+            color: var(--primary-text);
+
+            font-size: 1rem;
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            color: var(--accent);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+
+            margin-top: 30px;
+
+            color: var(--muted-text);
+
+            font-size: 0.88rem;
+        }
+
+        .footer a {
+            color: var(--secondary-text);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--primary-text);
+        }
+
+        @media (max-width: 640px) {
+
+            .page {
+                padding: 40px 18px;
+            }
+
+            .policy-panel {
+                padding:
+                    6px
+                    26px
+                    32px;
+            }
+
+            .policy-section {
+                padding: 30px 0;
+            }
+
+            .introduction {
+                font-size: 1.03rem;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="container">
+
+            <header class="header">
+
+                <div class="eyebrow">
+                    The Shoot Companion
+                </div>
+
+                <h1>
+                    Privacy Policy
+                </h1>
+
+                <p class="effective-date">
+                    Effective Date: July 7, 2026
+                </p>
+
+                <p class="introduction">
+                    The Shoot Companion is designed as a local-first
+                    application for macOS. This Privacy Policy explains
+                    how The Shoot Companion handles information when
+                    you use the application.
+                </p>
+
+            </header>
+
+
+            <article class="policy-panel">
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Information We Collect
+                    </h2>
+
+                    <p>
+                        The Shoot Companion does not require you to
+                        create an account or sign in.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not collect personal
+                        information for advertising, tracking, profiling,
+                        or marketing purposes.
+                    </p>
+
+                    <p>
+                        We do not sell personal information or user data.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Local Data Storage
+                    </h2>
+
+                    <p>
+                        Projects, scenes, shots, storyboard information,
+                        image editing settings, and other production
+                        information created within The Shoot Companion
+                        are stored locally on your Mac.
+                    </p>
+
+                    <p>
+                        This information is not automatically uploaded
+                        to servers operated by The Shoot Companion.
+                    </p>
+
+                    <p>
+                        You are responsible for maintaining appropriate
+                        backups of information stored on your Mac.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Files and Storyboard Images
+                    </h2>
+
+                    <p>
+                        The Shoot Companion may access images, documents,
+                        or other files that you explicitly select through
+                        macOS file selection dialogs.
+                    </p>
+
+                    <p>
+                        Selected files may be imported, copied, processed,
+                        or stored locally as part of your project or
+                        storyboard workflow.
+                    </p>
+
+                    <p>
+                        The Shoot Companion may also create exported files
+                        at locations that you explicitly select.
+                    </p>
+
+                    <p>
+                        The application does not automatically scan or
+                        access unrelated files stored on your Mac.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Image Imports from URLs
+                    </h2>
+
+                    <p>
+                        The Shoot Companion may connect to the internet
+                        when you explicitly request an image to be
+                        imported from a URL.
+                    </p>
+
+                    <p>
+                        The requested URL and standard network information
+                        required to establish the connection may be
+                        communicated to the website or server hosting
+                        that image.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not use URL imports for
+                        advertising or tracking.
+                    </p>
+
+                    <p>
+                        Third-party websites and servers are governed by
+                        their own privacy policies and practices.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Local Network Communication
+                    </h2>
+
+                    <p>
+                        The Shoot Companion may use your local network to
+                        communicate with compatible companion applications
+                        or devices, including applications designed to
+                        support production and on-set workflows.
+                    </p>
+
+                    <p>
+                        Local network communication may be used to exchange
+                        project, scene, shot, storyboard, capture, or related
+                        production information at your request.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not use local network
+                        communication for advertising or cross-app tracking.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Data Sharing
+                    </h2>
+
+                    <p>
+                        The Shoot Companion does not sell user data.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not share your project
+                        or production information with advertising
+                        companies or data brokers.
+                    </p>
+
+                    <p>
+                        Information may be transmitted to a third-party
+                        service only when you explicitly initiate a feature
+                        that requires communication with that service,
+                        such as importing an image from a URL.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Analytics and Advertising
+                    </h2>
+
+                    <p>
+                        The Shoot Companion does not use advertising SDKs.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not use your data for
+                        targeted advertising.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not track you across apps
+                        or websites for advertising purposes.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        User Accounts
+                    </h2>
+
+                    <p>
+                        The Shoot Companion does not currently require
+                        a user account.
+                    </p>
+
+                    <p>
+                        No account profile is created when you use the
+                        application.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Children's Privacy
+                    </h2>
+
+                    <p>
+                        The Shoot Companion is a productivity and
+                        production-planning application and is not
+                        specifically directed toward children.
+                    </p>
+
+                    <p>
+                        The Shoot Companion does not knowingly collect
+                        personal information from children through an
+                        account-registration or advertising system.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Data Retention and Deletion
+                    </h2>
+
+                    <p>
+                        Because project and production information is
+                        stored locally on your Mac, you control the
+                        information created within The Shoot Companion.
+                    </p>
+
+                    <p>
+                        You may delete projects, scenes, shots, storyboard
+                        information, or other supported content through
+                        the application.
+                    </p>
+
+                    <p>
+                        Removing the application or deleting locally stored
+                        application data may also remove information stored
+                        by The Shoot Companion.
+                    </p>
+
+                    <p>
+                        You should maintain backups of important production
+                        information before deleting application data.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Security
+                    </h2>
+
+                    <p>
+                        The Shoot Companion uses the security and
+                        application sandboxing capabilities provided
+                        by macOS.
+                    </p>
+
+                    <p>
+                        However, no software or storage system can
+                        guarantee absolute security.
+                    </p>
+
+                    <p>
+                        You are responsible for maintaining the security
+                        of your Mac, user account, and locally stored
+                        project information.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Changes to This Privacy Policy
+                    </h2>
+
+                    <p>
+                        This Privacy Policy may be updated as
+                        The Shoot Companion develops or introduces
+                        new features.
+                    </p>
+
+                    <p>
+                        Any updated Privacy Policy will be published
+                        on this page with a revised effective date.
+                    </p>
+
+                </section>
+
+
+                <section class="policy-section">
+
+                    <h2>
+                        Contact
+                    </h2>
+
+                    <p>
+                        For privacy questions or enquiries relating to
+                        The Shoot Companion, please contact:
+                    </p>
+
+                    <div class="contact-card">
+
+                        <span class="contact-label">
+                            Email
+                        </span>
+
+                        <a
+                            class="contact-email"
+                            href="mailto:your-support-email@example.com"
+                        >
+                            vissu.kalava@icloud.com
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+            </article>
+
+
+            <footer class="footer">
+
+                <span>
+                    © 2026 The Shoot Companion
+                </span>
+
+                <a href="index.html">
+                    Support
+                </a>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
